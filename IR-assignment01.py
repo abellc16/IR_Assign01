@@ -5,27 +5,47 @@ import math
 import string
 from collections import Counter
 
-#Builds the dictionsary
+
+# Builds the dictionary
 def make_dictionary(corpus):
-    dictionary = os.listdir(corpus)
-    for i in dictionary:
+    dict_gut = os.listdir(corpus)
+    for i in dict_gut:
         print(i)
     print('\n')
-    return dictionary
+    return dict_gut
 
-#Reads the corpus and prints character counts to a file.
-def read_corpus(dict,corpus):
+
+# Reads the corpus file by file
+def read_corpus(dict_gut, corpus):
     file.write("Characters in each file: \n")
-    for i in dict:
+    for i in dict_gut:
         text = open(os.path.join(corpus, i)).read()
         print(len(text))
         chars = i, len(text)
         file.write(str(chars))
         file.write('\n')
 
+        # Writes character frequency to a file
+        cfc.write(i + "\n")
+        cfc.write(str(char_freq_count(text)) + "\n\n")
 
-#Main function calls
+
+# Frequency count of all characters in a text.
+def char_freq_count(text):
+    freq = {}
+    for w in text:
+        keys = freq.keys()
+        if w in keys:
+            freq[w] += 1
+        else:
+            freq[w] = 1
+    return freq
+
+
+# Main function calls
 corpus = "gutenberg-corpus"
 file = open("output.txt", 'w')
-dictionary = make_dictionary(corpus)
-read_corpus(dictionary, corpus)
+cfc = open("char_freq.txt", 'w')
+
+dict_gut = make_dictionary(corpus)
+read_corpus(dict_gut, corpus)
