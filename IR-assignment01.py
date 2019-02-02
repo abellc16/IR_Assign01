@@ -6,6 +6,9 @@ from collections import Counter
 
 
 # Builds the dictionary
+from typing import Dict, Any
+
+
 def make_dictionary(corpus):
     dict_gut = os.listdir(corpus)
     for i in dict_gut:
@@ -25,8 +28,8 @@ def read_corpus(dict_gut, corpus):
         file.write('\n')
 
         # Writes character frequency to a file
-        cfc.write(i + "\n")
-        cfc.write(str(char_freq_count(text)) + "\n\n")
+        # cfc.write(i + "\n")
+        # cfc.write(str(char_freq_count(text)) + "\n\n")
         
         #Writes to common_word
         mcf.write(i + "\n")
@@ -35,16 +38,18 @@ def read_corpus(dict_gut, corpus):
 
 # Frequency count of all characters in a text.
 def char_freq_count(text):
-    freq = {}
-    for w in text:
-        keys = freq.keys()
-        if w in keys:
-            freq[w] += 1
-        else:
-            freq[w] = 1
-    return freq
+    return Counter(ch for ch in text.lower() if ch.isalpha())
 
-    
+
+# Creates one string for all of the files.
+def all_words(dict_gut):
+    wrds = ""
+    for doc in dict_gut:
+        text = open(os.path.join(corpus, doc)).read()
+        wrds = wrds + text
+
+    return wrds
+
 
 # Main function calls
 corpus = "gutenberg-corpus"
@@ -54,4 +59,7 @@ mcf = open('common_word.txt', 'w')
 
 dict_gut = make_dictionary(corpus)
 read_corpus(dict_gut, corpus)
+
+new_str = all_words(dict_gut)
+cfc.write(str(char_freq_count(new_str)))
 
