@@ -31,7 +31,7 @@ def read_corpus(dict_gut, corpus):
         
         #Writes to common_word
         mcf.write(i + "\n")
-        mcf.write((Counter(text).most_common(10)))  
+        mcf.write(str(Counter(text).most_common(10)))  
         
 
 # Frequency count of all characters in a text.
@@ -51,7 +51,7 @@ def char_freq_count(text):
 corpus = "gutenberg-corpus"
 file = open("output.txt", 'w')
 cfc = open("char_freq.txt", 'w')
-mcf = open('common_word', 'w')
+mcf = open('common_word.txt', 'w')
 
 dict_gut = make_dictionary(corpus)
 read_corpus(dict_gut, corpus)
