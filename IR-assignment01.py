@@ -20,6 +20,9 @@ def make_dictionary(corpus):
 # Reads the corpus file by file
 def read_corpus(dict_gut, corpus):
     file.write("Characters in each file: \n")
+    mcf.write("===========================\n")
+    mcf.write("Most Common Words \n")
+    mcf.write("===========================\n")
     for i in dict_gut:
         text = open(os.path.join(corpus, i)).read()
         print(len(text))
@@ -27,11 +30,7 @@ def read_corpus(dict_gut, corpus):
         file.write(str(chars))
         file.write('\n')
 
-        # Writes character frequency to a file
-        # cfc.write(i + "\n")
-        # cfc.write(str(char_freq_count(text)) + "\n\n")
-        
-        #Writes to common_word
+        # Writes to common_word
         mcf.write(i + "\n")
         mcf.write(str(Counter(text).most_common(10)) + "\n")
         
@@ -61,5 +60,11 @@ dict_gut = make_dictionary(corpus)
 read_corpus(dict_gut, corpus)
 
 new_str = all_words(dict_gut)
+cfc.write("===========================\n")
+cfc.write("Character Frequency Counts\n")
+cfc.write("===========================\n")
 cfc.write(str(char_freq_count(new_str)))
 
+file.close()
+cfc.close()
+mcf.close()
