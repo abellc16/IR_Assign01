@@ -30,7 +30,7 @@ def read_corpus(dict_gut, corpus):
         
         #Writes to common_word
         mcf.write(i + "\n")
-        mcf.write(str(Counter(text).most_common(10)))  
+        mcf.write(str(Counter(text).most_common(10)) + "\n")
         
 
 # Frequency count of all characters in a text.
