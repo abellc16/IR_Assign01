@@ -90,7 +90,7 @@ def calc_trigram(text):
 # descending order
 def ngram_counter(text):
     counter = Counter(text)
-    return counter.most_common()
+    return counter.most_common(10)
 
 
 # Main function calls
