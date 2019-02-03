@@ -22,9 +22,12 @@ def read_corpus(dict_gut, corpus):
         file.write(str(chars))
         file.write('\n')
 
-        # Writes to common_word
+        # Writes to common_letter
         mcf.write(i + "\n")
         mcf.write(str(Counter(text).most_common(10)) + "\n")
+        # Writes to uncommon_letter
+        ucf.write(i + "\n")
+        ucf.write(str(list(reversed(Counter(text).most_common()))) + '\n')
 
         # Calculate unigrams
         # unigram.write(i)
@@ -97,15 +100,19 @@ def ngram_counter(text):
 corpus = "gutenberg-corpus"
 file = open("output.txt", 'w')
 cfc = open("char_freq.txt", 'w')
-mcf = open('common_word.txt', 'w')
+mcf = open('common_letter.txt', 'w')
+ucf = open('uncommon_letter.txt', 'w')
 unigram = open('unigram.txt', 'w')
 bigram = open('bigram.txt', 'w')
 trigram = open('trigram.txt', 'w')
 
 dict_gut = make_dictionary(corpus)
 mcf.write("===========================\n")
-mcf.write("Most Common Words \n")
+mcf.write("Most Common Letters \n")
 mcf.write("===========================\n")
+ucf.write("===========================\n")
+ucf.write("Most Uncommon Letters \n")
+ucf.write("===========================\n")
 read_corpus(dict_gut, corpus)
 
 new_str = all_words(dict_gut)
@@ -152,6 +159,7 @@ trigram.write(str(ngram_counter(t_test)))
 file.close()
 cfc.close()
 mcf.close()
+ucf.close()
 unigram.close()
 bigram.close()
 trigram.close()
