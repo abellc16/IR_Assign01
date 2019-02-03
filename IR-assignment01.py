@@ -56,6 +56,7 @@ def all_words(dict_gut):
 
     return wrds
 
+
 # Find all unigrams in a document
 def calc_unigram(text):
     text = text.split(' ')
@@ -63,7 +64,8 @@ def calc_unigram(text):
     for w in range(len(text)):
         uni.append(text[w])
 
-    return uni
+    return sorted(uni)
+
 
 # Find all bigrams in a document
 def calc_bigram(text):
@@ -72,7 +74,8 @@ def calc_bigram(text):
     for w in range(len(text) - 1):
         bi.append((text[w], text[w + 1]))
 
-    return bi
+    return sorted(bi)
+
 
 # Find all trigrams of each document
 def calc_trigram(text):
@@ -81,7 +84,13 @@ def calc_trigram(text):
     for w in range(len(text) - 2):
         tri.append((text[w], text[w + 1], text[w + 2]))
 
-    return tri
+    return sorted(tri)
+
+# Counts the frequency of n-grams and returns them in
+# descending order
+def ngram_counter(text):
+    counter = Counter(text)
+    return counter.most_common()
 
 
 # Main function calls
@@ -106,20 +115,39 @@ cfc.write("===========================\n")
 cfc.write(str(char_freq_count(new_str)))
 
 test = "hello how what are you doing at 8?"
+u_test = calc_unigram(test)
+b_test = calc_bigram(test)
+t_test = calc_trigram(test)
+
+# Formatting for readability of unigrams.txt
 unigram.write("===========================\n")
 unigram.write("Unigrams\n")
 unigram.write("===========================\n")
-unigram.write(str(calc_unigram(test)))
+unigram.write(str(u_test)) # Write unigrams to .txt
+unigram.write("\n===========================\n")
+unigram.write("Unigram Frequencies\n")
+unigram.write("===========================\n")
+unigram.write(str(ngram_counter(u_test)))
 
+# Formatting for readability of bigrams.txt
 bigram.write("===========================\n")
 bigram.write("Bigrams\n")
 bigram.write("===========================\n")
-bigram.write(str(calc_bigram(test)))
+bigram.write(str(b_test)) # Write bigrams to .txt
+bigram.write("\n===========================\n")
+bigram.write("Bigram frequencies\n")
+bigram.write("===========================\n")
+bigram.write(str(ngram_counter(b_test)))
 
+# Formatting for readability of trigrams.txt
 trigram.write("===========================\n")
 trigram.write("Trigrams\n")
 trigram.write("===========================\n")
-trigram.write(str(calc_trigram(test)))
+trigram.write(str(t_test)) # Write trigrams to .txt
+trigram.write("\n===========================\n")
+trigram.write("Trigram frequencies\n")
+trigram.write("===========================\n")
+trigram.write(str(ngram_counter(t_test)))
 
 file.close()
 cfc.close()
