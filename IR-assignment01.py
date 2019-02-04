@@ -18,7 +18,6 @@ def read_corpus(dict_gut, corpus):
     file.write("Characters in each file: \n")
     for i in dict_gut:
         text = open(os.path.join(corpus, i)).read()
-        print(len(text))
         chars = i, len(text)
         file.write(str(chars))
         file.write('\n')
@@ -31,19 +30,29 @@ def read_corpus(dict_gut, corpus):
         ucf.write(str(list(reversed(Counter(text).most_common()))) + '\n')
 
         # Calculate unigrams
-        # unigram.write(i)
-        # unigram.write(str(calc_unigram(text)))
-        # unigram.write("\n")
+        unigram.write(i + '\n')
+        unigram.write(str(calc_unigram(text)))
+        unigram.write("\n")
+        unigram.write("Unigram Frequencies\n")
+        unigram.write("===========================\n")
+        unigram.write(str(ngram_counter(text)))  
         #
         # # Calculate bigrams
-        # unigram.write(i)
-        # unigram.write(str(calc_bigram(text)))
-        # bigram.write("\n")
+        bigram.write(i + '\n')
+        bigram.write(str(calc_bigram(text)))
+        bigram.write("\n")
+        bigram.write("Bigram frequencies\n")
+        bigram.write("===========================\n")
+        bigram.write(str(ngram_counter(text)))
         #
         # # Calculate trigrams
-        # trigram.write(i)
-        # trigram.write(str(calc_trigram(text)))
-        # trigram.write("\n")
+        trigram.write(i + '\n')
+        trigram.write(str(calc_trigram(text)))
+        trigram.write("\n")
+        trigram.write("Trigram frequencies\n")
+        trigram.write("===========================\n")
+        trigram.write(str(ngram_counter(text)))
+
 
         zipf_law(i, text)
         
@@ -100,7 +109,6 @@ def ngram_counter(text):
 
 #Log-log plot of the frequency of word occurrences versus their ranks 
 def zipf_law(doc, text):
-    print(doc + '\n')
     COUNTS = Counter(text)
     M = COUNTS['from']
     plt.yscale('log')
@@ -144,34 +152,34 @@ b_test = calc_bigram(test)
 t_test = calc_trigram(test)
 
 # Formatting for readability of unigrams.txt
-unigram.write("===========================\n")
-unigram.write("Unigrams\n")
-unigram.write("===========================\n")
-unigram.write(str(u_test)) # Write unigrams to .txt
-unigram.write("\n===========================\n")
-unigram.write("Unigram Frequencies\n")
-unigram.write("===========================\n")
-unigram.write(str(ngram_counter(u_test)))
+#unigram.write("===========================\n")
+#unigram.write("Unigrams\n")
+#unigram.write("===========================\n")
+#unigram.write(str(u_test)) # Write unigrams to .txt
+#unigram.write("\n===========================\n")
+#unigram.write("Unigram Frequencies\n")
+#unigram.write("===========================\n")
+#unigram.write(str(ngram_counter(u_test)))
 
 # Formatting for readability of bigrams.txt
-bigram.write("===========================\n")
-bigram.write("Bigrams\n")
-bigram.write("===========================\n")
-bigram.write(str(b_test)) # Write bigrams to .txt
-bigram.write("\n===========================\n")
-bigram.write("Bigram frequencies\n")
-bigram.write("===========================\n")
-bigram.write(str(ngram_counter(b_test)))
+#bigram.write("===========================\n")
+#bigram.write("Bigrams\n")
+#bigram.write("===========================\n")
+#bigram.write(str(b_test)) # Write bigrams to .txt
+#bigram.write("\n===========================\n")
+#bigram.write("Bigram frequencies\n")
+#bigram.write("===========================\n")
+#bigram.write(str(ngram_counter(b_test)))
 
 # Formatting for readability of trigrams.txt
-trigram.write("===========================\n")
-trigram.write("Trigrams\n")
-trigram.write("===========================\n")
-trigram.write(str(t_test)) # Write trigrams to .txt
-trigram.write("\n===========================\n")
-trigram.write("Trigram frequencies\n")
-trigram.write("===========================\n")
-trigram.write(str(ngram_counter(t_test)))
+#trigram.write("===========================\n")
+#trigram.write("Trigrams\n")
+#trigram.write("===========================\n")
+#trigram.write(str(t_test)) # Write trigrams to .txt
+#trigram.write("\n===========================\n")
+#trigram.write("Trigram frequencies\n")
+#trigram.write("===========================\n")
+#trigram.write(str(ngram_counter(t_test)))
 
 file.close()
 cfc.close()
