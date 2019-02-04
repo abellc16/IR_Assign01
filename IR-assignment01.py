@@ -1,4 +1,5 @@
 import os
+import matplotlib.pyplot as plt
 from collections import Counter
 
 
@@ -43,6 +44,8 @@ def read_corpus(dict_gut, corpus):
         # trigram.write(i)
         # trigram.write(str(calc_trigram(text)))
         # trigram.write("\n")
+
+        zipf_law(i, text)
         
 
 # Frequency count of all characters in a text.
@@ -94,6 +97,18 @@ def calc_trigram(text):
 def ngram_counter(text):
     counter = Counter(text)
     return counter.most_common(10)
+
+#Log-log plot of the frequency of word occurrences versus their ranks 
+def zipf_law(doc, text):
+    print(doc + '\n')
+    COUNTS = Counter(text)
+    M = COUNTS['to']
+    plt.yscale('log')
+    plt.xscale('log')
+    plt.title('Frequency of n-th most frequent word and 1/n line.')
+    plt.plot([c for (w, c) in COUNTS.most_common()])
+    plt.plot([M/i for i in range(1, len(COUNTS)+1)])
+    plt.savefig('plot.png')
 
 
 # Main function calls
