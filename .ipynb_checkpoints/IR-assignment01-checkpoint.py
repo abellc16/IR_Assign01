@@ -1,5 +1,4 @@
 import os
-import re
 #import matplotlib.pyplot as plt
 from collections import Counter
 
@@ -13,17 +12,12 @@ def make_dictionary(corpus):
     print('\n')
     return dict_gut
 
-# function for extracting tokens
-def tokens(text):
-    return re.findall('[a-z]+', text.lower()) 
-
 
 # Reads the corpus file by file
 def read_corpus(dict_gut, corpus):
     file.write("Characters in each file: \n")
     for i in dict_gut:
         text = open(os.path.join(corpus, i)).read()
-        words = tokens(text)
         chars = i, len(text)
         file.write(str(chars))
         file.write('\n')
@@ -37,24 +31,27 @@ def read_corpus(dict_gut, corpus):
 
         # Calculate unigrams
         unigram.write(i + '\n')
-        unigram.write(str(Counter(words).most_common(10)))
+        unigram.write(str(calc_unigram(text)))
         unigram.write("\n")
         unigram.write("Unigram Frequencies\n")
         unigram.write("===========================\n")
-        
+        unigram.write(str(ngram_counter(text)))  
+        #
         # # Calculate bigrams
         bigram.write(i + '\n')
-        bigram.write(str(Counter(calc_bigram(text)).most_common(10)))
+        bigram.write(str(calc_bigram(text)))
         bigram.write("\n")
         bigram.write("Bigram frequencies\n")
         bigram.write("===========================\n")
-        
+        bigram.write(str(ngram_counter(text)))
+        #
         # # Calculate trigrams
         trigram.write(i + '\n')
-        trigram.write(str(Counter(calc_trigram(text)).most_common(10)))
+        trigram.write(str(calc_trigram(text)))
         trigram.write("\n")
         trigram.write("Trigram frequencies\n")
         trigram.write("===========================\n")
+        trigram.write(str(ngram_counter(text)))
 
 
        # zipf_law(i, text)
@@ -73,6 +70,16 @@ def all_words(dict_gut):
         wrds = wrds + text
 
     return wrds
+
+
+# Find all unigrams in a document
+def calc_unigram(text):
+    text = text.split(' ')
+    uni = []
+    for w in range(len(text)):
+        uni.append(text[w])
+
+    return sorted(uni)
 
 
 # Find all bigrams in a document
@@ -139,6 +146,40 @@ cfc.write("Character Frequency Counts\n")
 cfc.write("===========================\n")
 cfc.write(str(char_freq_count(new_str)))
 
+test = "hello how what are you doing at 8?"
+u_test = calc_unigram(test)
+b_test = calc_bigram(test)
+t_test = calc_trigram(test)
+
+# Formatting for readability of unigrams.txt
+#unigram.write("===========================\n")
+#unigram.write("Unigrams\n")
+#unigram.write("===========================\n")
+#unigram.write(str(u_test)) # Write unigrams to .txt
+#unigram.write("\n===========================\n")
+#unigram.write("Unigram Frequencies\n")
+#unigram.write("===========================\n")
+#unigram.write(str(ngram_counter(u_test)))
+
+# Formatting for readability of bigrams.txt
+#bigram.write("===========================\n")
+#bigram.write("Bigrams\n")
+#bigram.write("===========================\n")
+#bigram.write(str(b_test)) # Write bigrams to .txt
+#bigram.write("\n===========================\n")
+#bigram.write("Bigram frequencies\n")
+#bigram.write("===========================\n")
+#bigram.write(str(ngram_counter(b_test)))
+
+# Formatting for readability of trigrams.txt
+#trigram.write("===========================\n")
+#trigram.write("Trigrams\n")
+#trigram.write("===========================\n")
+#trigram.write(str(t_test)) # Write trigrams to .txt
+#trigram.write("\n===========================\n")
+#trigram.write("Trigram frequencies\n")
+#trigram.write("===========================\n")
+#trigram.write(str(ngram_counter(t_test)))
 
 file.close()
 cfc.close()

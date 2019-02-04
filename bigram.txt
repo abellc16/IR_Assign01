@@ -1,0 +1,76 @@
+austen-emma.txt
+[(('of', 'the'), 482), (('to', 'be'), 456), (('', 'I'), 443), (('in', 'the'), 360), (('', ''), 357), (('', 'She'), 250), (('had', 'been'), 238), (('I', 'am'), 236), (('could', 'not'), 226), (('to', 'the'), 207)]
+Bigram frequencies
+===========================
+austen-persuasion.txt
+[(('of', 'the'), 357), (('to', 'be'), 290), (('in', 'the'), 254), (('had', 'been'), 204), (('', 'I'), 197), (('', 'She'), 175), (('to', 'the'), 143), (('could', 'not'), 127), (('', 'He'), 125), (('she', 'had'), 118)]
+Bigram frequencies
+===========================
+austen-sense.txt
+[(('', ''), 784), (('of', 'the'), 336), (('to', 'be'), 334), (('in', 'the'), 267), (('', 'I'), 188), (('of', 'her'), 187), (('to', 'the'), 184), (('of', 'his'), 156), (('it', 'was'), 148), (('at', 'the'), 131)]
+Bigram frequencies
+===========================
+bible-kjv.txt
+[(('of', 'the'), 9325), (('in', 'the'), 4004), (('and', 'the'), 3202), (('the', 'LORD'), 3018), (('And', 'the'), 2110), (('shall', 'be'), 1916), (('to', 'the'), 1768), (('all', 'the'), 1668), (('I', 'will'), 1659), (('unto', 'the'), 1591)]
+Bigram frequencies
+===========================
+big.txt
+[(('', ''), 18328), (('of', 'the'), 15210), (('in', 'the'), 7811), (('and', 'the'), 5006), (('to', 'the'), 4220), (('the', 'LORD'), 3018), (('all', 'the'), 2684), (('to', 'be'), 2351), (('And', 'the'), 2169), (('shall', 'be'), 2167)]
+Bigram frequencies
+===========================
+blake-poems.txt
+[(('', ''), 252), (('\n', '\n'), 48), (('', 'And'), 39), (('in', 'the'), 39), (('of', 'the'), 27), (('\n', 'And'), 23), (('\n', 'THE'), 21), (('And', 'the'), 19), (('And', 'I'), 12), (('', 'The'), 11)]
+Bigram frequencies
+===========================
+bryant-stories.txt
+[(('', ''), 1335), (('of', 'the'), 190), (('said', 'the'), 185), (('the', 'little'), 185), (('in', 'the'), 183), (('to', 'the'), 145), (('and', 'the'), 117), (('on', 'the'), 85), (('he', 'was'), 76), (('was', 'a'), 67)]
+Bigram frequencies
+===========================
+burgess-busterbrown.txt
+[(('in', 'the'), 73), (('Buster', 'Bear'), 70), (('Farmer', "Brown's"), 67), (('Little', 'Joe'), 64), (('the', 'Green'), 58), (('he', 'had'), 57), (("Brown's", 'boy'), 53), (('of', 'the'), 53), (('that', 'he'), 44), (('to', 'the'), 42)]
+Bigram frequencies
+===========================
+carroll-alice.txt
+[(('', ''), 656), (('said', 'the'), 197), (('of', 'the'), 102), (('in', 'a'), 84), (('and', 'the'), 60), (('to', 'the'), 56), (('in', 'the'), 54), (('', '*'), 51), (('*', ''), 51), (('as', 'she'), 48)]
+Bigram frequencies
+===========================
+chesterton-ball.txt
+[(('of', 'the'), 470), (('in', 'the'), 304), (('', ''), 301), (('with', 'a'), 190), (('in', 'a'), 162), (('to', 'the'), 137), (('and', 'the'), 136), (('of', 'a'), 136), (('said', 'the'), 115), (('to', 'be'), 102)]
+Bigram frequencies
+===========================
+chesterton-brown.txt
+[(('', ''), 3557), (('of', 'the'), 487), (('in', 'the'), 280), (('', 'The'), 218), (('', 'He'), 181), (('', '"I'), 160), (('to', 'the'), 152), (('of', 'a'), 138), (('and', 'the'), 136), (('in', 'a'), 131)]
+Bigram frequencies
+===========================
+chesterton-thursday.txt
+[(('of', 'the'), 330), (('in', 'the'), 166), (('said', 'the'), 128), (('with', 'a'), 115), (('to', 'the'), 104), (('in', 'a'), 102), (('of', 'a'), 101), (('on', 'the'), 87), (('at', 'the'), 85), (('like', 'a'), 80)]
+Bigram frequencies
+===========================
+edgeworth-parents.txt
+[(('', ''), 2387), (('of', 'the'), 605), (('in', 'the'), 437), (('to', 'the'), 365), (('', 'I'), 360), (('to', 'be'), 338), (('', 'The'), 266), (('at', 'the'), 250), (('', 'He'), 224), (('he', 'was'), 200)]
+Bigram frequencies
+===========================
+melville-moby-dick.txt
+[(('of', 'the'), 1464), (('in', 'the'), 912), (('to', 'the'), 569), (('', 'But'), 413), (('from', 'the'), 321), (('and', 'the'), 295), (('of', 'his'), 283), (('', 'The'), 270), (('on', 'the'), 265), (('of', 'a'), 254)]
+Bigram frequencies
+===========================
+milton-paradise.txt
+[(('', ''), 682), (('to', 'the'), 167), (('from', 'the'), 111), (('in', 'the'), 111), (('on', 'the'), 101), (('and', 'the'), 100), (('all', 'the'), 81), (('of', 'the'), 70), (('and', 'in'), 69), (('and', 'with'), 65)]
+Bigram frequencies
+===========================
+shakespeare-caesar.txt
+[(('', ''), 6721), (('', 'BRUTUS.'), 194), (('', 'And'), 176), (('', 'CASSIUS.'), 138), (('', 'I'), 91), (('', 'That'), 77), (('', 'To'), 69), (('', 'The'), 62), (('', 'ANTONY.'), 51), (('', 'But'), 44)]
+Bigram frequencies
+===========================
+shakespeare-hamlet.txt
+[(('', ''), 735), (('', 'Ham.'), 337), (('', 'Hor.'), 95), (('', 'King.'), 89), (('', 'Qu.'), 62), (('in', 'the'), 61), (('', 'Laer.'), 59), (('', 'Ophe.'), 56), (('Lord\n\n', ''), 55), (('to', 'the'), 54)]
+Bigram frequencies
+===========================
+shakespeare-macbeth.txt
+[(('', ''), 428), (('', 'Macb.'), 137), (('', 'Macd.'), 58), (('', 'Rosse.'), 36), (('', 'Lady.'), 35), (('I', 'haue'), 29), (('', 'Mal.'), 25), (('', 'Banq.'), 24), (('of', 'the'), 24), (('I', 'am'), 23)]
+Bigram frequencies
+===========================
+whitman-leaves.txt
+[(('', ''), 6737), (('of', 'the'), 1143), (('in', 'the'), 521), (('and', 'the'), 430), (('the\n', ''), 313), (('to', 'the'), 241), (('on', 'the'), 232), (('from', 'the'), 203), (('', 'the'), 173), (('and\n', ''), 173)]
+Bigram frequencies
+===========================
