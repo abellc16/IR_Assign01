@@ -31,30 +31,11 @@ def read_corpus(dict_gut, corpus):
         # Writes to common_letter
         mcf.write(i + "\n")
         mcf.write(str(Counter(text).most_common(10)) + "\n")
+
         # Writes to uncommon_letter
         ucf.write(i + "\n")
         ucf.write(str(list(reversed(Counter(text).most_common()))) + '\n')
 
-        # Calculate unigrams
-        unigram.write(i + '\n')
-        unigram.write(str(Counter(words).most_common(10)))
-        unigram.write("\n")
-        unigram.write("Unigram Frequencies\n")
-        unigram.write("===========================\n")
-        
-        # # Calculate bigrams
-        bigram.write(i + '\n')
-        bigram.write(str(Counter(calc_bigram(text)).most_common(10)))
-        bigram.write("\n")
-        bigram.write("Bigram frequencies\n")
-        bigram.write("===========================\n")
-        
-        # # Calculate trigrams
-        trigram.write(i + '\n')
-        trigram.write(str(Counter(calc_trigram(text)).most_common(10)))
-        trigram.write("\n")
-        trigram.write("Trigram frequencies\n")
-        trigram.write("===========================\n")
 
 
        # zipf_law(i, text)
@@ -138,6 +119,25 @@ cfc.write("===========================\n")
 cfc.write("Character Frequency Counts\n")
 cfc.write("===========================\n")
 cfc.write(str(char_freq_count(new_str)))
+
+new_words = tokens(new_str)
+
+# Calculate unigrams
+unigram.write("Unigram Frequencies\n")
+unigram.write("===========================\n")
+unigram.write(str(Counter(new_words).most_common(10)))
+
+        
+# Calculate bigrams
+bigram.write("Bigram frequencies\n")
+bigram.write("===========================\n")
+bigram.write(str(Counter(calc_bigram(new_str)).most_common(10)))
+
+        
+# Calculate trigrams
+trigram.write("Trigram frequencies\n")
+trigram.write("===========================\n")
+trigram.write(str(Counter(calc_trigram(new_str)).most_common(10)))
 
 
 file.close()
