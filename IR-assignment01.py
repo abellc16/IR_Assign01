@@ -102,13 +102,15 @@ def ngram_counter(text):
 def zipf_law(doc, text):
     print(doc + '\n')
     COUNTS = Counter(text)
-    M = COUNTS['to']
+    M = COUNTS['from']
     plt.yscale('log')
     plt.xscale('log')
-    plt.title('Frequency of n-th most frequent word and 1/n line.')
+    plt.title(doc + '\nFrequency of n-th most frequent word and 1/n line.')
     plt.plot([c for (w, c) in COUNTS.most_common()])
     plt.plot([M/i for i in range(1, len(COUNTS)+1)])
-    plt.savefig('plot.png')
+    plt.legend(('n-th most frequent','1/n'), loc = 'lower left')
+    plt.show()
+    
 
 
 # Main function calls
