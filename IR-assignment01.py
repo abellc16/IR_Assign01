@@ -1,6 +1,6 @@
 import os
 import re
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from collections import Counter
 
 
@@ -38,7 +38,7 @@ def read_corpus(dict_gut, corpus):
 
 
 
-       # zipf_law(i, text)
+        zipf_law(i, words)
         
 
 # Frequency count of all characters in a text.
@@ -131,13 +131,13 @@ unigram.write(str(Counter(new_words).most_common(10)))
 # Calculate bigrams
 bigram.write("Bigram frequencies\n")
 bigram.write("===========================\n")
-bigram.write(str(Counter(calc_bigram(new_str)).most_common(10)))
+bigram.write(str(Counter(calc_bigram(new_str)).most_common(11)))
 
         
 # Calculate trigrams
 trigram.write("Trigram frequencies\n")
 trigram.write("===========================\n")
-trigram.write(str(Counter(calc_trigram(new_str)).most_common(10)))
+trigram.write(str(Counter(calc_trigram(new_str)).most_common(11)))
 
 
 file.close()
